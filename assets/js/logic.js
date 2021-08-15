@@ -1,6 +1,6 @@
 /* eslint-disable max-classes-per-file */
 
-// Main book blass
+// Main book class
 class Book {
   constructor(title, author) {
     this.title = title;
