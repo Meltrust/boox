@@ -1,3 +1,33 @@
+ul {
+  list-style-type: none;
+  width: 60%;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+li p {
+  margin-bottom: 0%;
+}
+
+ul#main-list li:nth-child(odd) {
+  background-color: rgb(190, 190, 190);
+}
+
 a {
   text-decoration: none;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.book-form input {
+  margin: 5px 0;
 }
