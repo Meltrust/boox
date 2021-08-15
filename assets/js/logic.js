@@ -1,73 +1,84 @@
+/* eslint-disable max-classes-per-file */
+
+// Main book class
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
+
 // localStorage
 
-function allBooks() {
-  let books;
-  if (localStorage.getItem('books') === null) {
-    books = [];
-  } else {
-    books = JSON.parse(localStorage.getItem('books'));
-  }
-  return books;
-}
-
-function addBooks(newBook) {
-  const getAllBooks = allBooks();
-  getAllBooks.push(newBook);
-  localStorage.setItem('books', JSON.stringify(getAllBooks));
-}
-
-function deleteBooks(title, author) {
-  const books = allBooks();
-
-  books.forEach((book, index) => {
-    if (book.title === title && book.author === author) {
-      books.splice(index, 1);
+class BrowserSave {
+  static allBooks() {
+    let books;
+    if (localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
     }
-  });
+    return books;
+  }
 
-  localStorage.setItem('books', JSON.stringify(books));
+  static addBooks(newBook) {
+    const getAllBooks = BrowserSave.allBooks();
+    getAllBooks.push(newBook);
+    localStorage.setItem('books', JSON.stringify(getAllBooks));
+  }
+
+  static deleteBooks(title, author) {
+    const books = BrowserSave.allBooks();
+
+    books.forEach((book, index) => {
+      if (book.title === title && book.author === author) {
+        books.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem('books', JSON.stringify(books));
+  }
 }
-
 // Display on UI
+class Onscreen {
+  static addBookToList(book) {
+    const list = document.querySelector('#main-list');
 
-function addBookToList(book) {
-  const list = document.querySelector('#main-list');
+    const item = document.createElement('li');
 
-  const item = document.createElement('li');
-
-  item.innerHTML = `
+    item.innerHTML = `
     <p>${book.title}</p>
     <p>${book.author}</p>
     <button><a href="#" class="removable">remove</a></button>
   `;
 
-  list.appendChild(item);
-}
+    list.appendChild(item);
+  }
 
-function displayBooks() {
-  const books = allBooks();
+  static displayBooks() {
+    const books = BrowserSave.allBooks();
 
-  books.forEach((book) => addBookToList(book));
-}
+    books.forEach((book) => Onscreen.addBookToList(book));
+  }
 
-// Function to delete books from UI
+  // Function to delete books from UI
 
-function deleteBooksUI(element) {
-  if (element.classList.contains('removable')) {
-    element.parentElement.parentElement.remove();
+  static deleteBooksUI(element) {
+    if (element.classList.contains('removable')) {
+      element.parentElement.parentElement.remove();
+    }
+  }
+
+  // Function for clearing the fields
+
+  static clearFields() {
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
   }
 }
-
-// Function for clearing the fields
-
-function clearFields() {
-  document.querySelector('#title').value = '';
-  document.querySelector('#author').value = '';
-}
-
 // Event for displaying books UI
 
-document.addEventListener('DOMContentLoaded', displayBooks());
+document.addEventListener('DOMContentLoaded', Onscreen.displayBooks());
 
 // Event for adding books UI
 
@@ -93,15 +104,13 @@ document.querySelector('#main-form').addEventListener('submit', (t) => {
   } else {
     // Create the book in UI
 
-    const book = {};
-    book.title = title;
-    book.author = author;
+    const book = new Book(title, author);
 
     // To UI
-    addBookToList(book);
+    Onscreen.addBookToList(book);
 
     // To storage
-    addBooks(book);
+    BrowserSave.addBooks(book);
 
     // Success message
     const success = document.createElement('p');
@@ -112,7 +121,7 @@ document.querySelector('#main-form').addEventListener('submit', (t) => {
   `;
     location.appendChild(success);
     // Clear the fields
-    clearFields();
+    Onscreen.clearFields();
   }
 
   // Dismiss these alerts after 2 secs
@@ -122,7 +131,7 @@ document.querySelector('#main-form').addEventListener('submit', (t) => {
 // Event for removing books from UI
 document.querySelector('#main-list').addEventListener('click', (t) => {
   // From UI
-  deleteBooksUI(t.target);
+  Onscreen.deleteBooksUI(t.target);
 
   // From storage
 
@@ -130,5 +139,5 @@ document.querySelector('#main-list').addEventListener('click', (t) => {
 
   const delAuthor = t.target.parentElement.previousElementSibling.textContent;
 
-  deleteBooks(delTitle, delAuthor);
+  BrowserSave.deleteBooks(delTitle, delAuthor);
 });
