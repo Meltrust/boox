@@ -1,57 +1,50 @@
-# Project Name
+# Awesome Books
 
-> One paragraph statement about the project.
+> Basic website that allows users to add/remove books from a list. 
 
-![screenshot](./app_screenshot.png)
+![screenshot](./assets/img/app_screenshot.png)
 
-Additional description about the project and its features.
+This is achieved that by using JavaScript objects and arrays. Also, the DOM is dynamically modified with basic events. 
 
 ## Built With
 
-- Major languages,
-- frameworks,
-- technologies used
+- Plain Javascript
+- HTML5
 
-## Live Demo
+## Future Updates & Roadmap:
 
-[Live Demo Link](https://livedemo.com)
-
+- Refactor to classes
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+## Getting Started:
+
+To get a local copy up and running follow these simple example steps:
+
+1. Under the repository name, click the Clone or download green button.
+
+![clone](https://user-images.githubusercontent.com/53324035/73660989-4451aa80-4667-11ea-8a89-176f89d6548a.png)
+
+2. Copy the URL given by clicking the clipboard button
+
+3. Open a terminal window in your local machine and change the current directory to the one you
+   want the clone directory to be made.
+
+4. Type  git clone and the paste the URL you previusly copied to the clipboard
+
+5. Change the current directory to the newly created folder
+
+6. Now open the index.html file on your browser. You can add and remove books which persist on browser reloads.
 
 
-To get a local copy up and running follow these simple example steps.
+## Author
 
-### Prerequisites
+👤 **Miguel Tapia**
 
-### Setup
+- Github: [@meltrust](https://github.com/meltrust)
+- Linkedin: [linkedin](https://www.linkedin.com/in/meltrust/)
+- Or talk to me directly at: original.mtapia@outlook.com
 
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
-## Authors
-
-👤 **Author1**
-
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
-
-👤 **Author2**
-
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
 
 ## 🤝 Contributing
 
