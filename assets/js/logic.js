@@ -47,7 +47,7 @@ class Onscreen {
     <p class="p-0 m-0">"${book.title}" by ${book.author}</p>
     <p class="d-none">${book.title}</p>
     <p class="d-none">${book.author}</p>
-    <button><a href="#" class="removable">remove</a></button>
+    <button><a href="#" class="removable link-dark">remove</a></button>
   `;
 
     list.appendChild(item);
