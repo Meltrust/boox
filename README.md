@@ -4,7 +4,7 @@
 
 ![screenshot](./assets/img/app_screenshot.png)
 
-This is achieved that by using JavaScript objects and arrays. Also, the DOM is dynamically modified with basic events. 
+This is achieved by using JavaScript objects and arrays. Also, the DOM is dynamically modified with basic events. 
 
 ## Built With
 
@@ -15,9 +15,9 @@ This is achieved that by using JavaScript objects and arrays. Also, the DOM is d
 
 - Refactor to classes
 
-## Getting Started
 
-## Getting Started:
+
+## Getting Started
 
 To get a local copy up and running follow these simple example steps:
 
