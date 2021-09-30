@@ -6,6 +6,10 @@
 
 This is achieved by using JavaScript objects and arrays. Also, the DOM is dynamically modified with basic events. 
 
+## Live Demo
+
+https://meltrust.github.io/boox/
+
 ## Built With
 
 - Plain Javascript
